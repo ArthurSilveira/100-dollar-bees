@@ -48,6 +48,7 @@ function Home(props) {
 const HomeWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  padding-bottom: var(--space--xxl);
 `
 
 const HomeSection = styled.div`

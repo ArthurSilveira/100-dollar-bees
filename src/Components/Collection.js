@@ -58,12 +58,16 @@ const Header = styled.div`
 const Body = styled.div`
   padding-top: 16px;
   display: grid;
-  grid-template-columns: 46% 46%;
-  column-gap: 8%;
-  row-gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
 
   @media (min-width: ${BREAKPOINTS.mobile}px) {
     padding-top: 32px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: ${BREAKPOINTS.tablet}px) {
+    padding-top: 64px;
     grid-template-columns: repeat(5, 1fr);
     column-gap: 32px;
     row-gap: 32px;
@@ -75,6 +79,7 @@ const AssetCard = styled.div`
   height: 100%;
   flex-direction: column;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, .05);
+  background: ${p => p.theme.dark && p.theme.colors.foreground};
 
   .card-copy {
     padding: var(--space-inset--xs);

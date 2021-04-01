@@ -149,7 +149,6 @@ const reset = css`
   }
 
   a {
-    color: black;
     text-decoration: none;
   }
 

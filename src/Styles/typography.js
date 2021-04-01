@@ -66,7 +66,6 @@ code {
 
   body {
     font-size: ${FONT_SCALE.body.base};
-    color: var(--colors-neutral);
 
     @media (min-width: ${BREAKPOINTS.mobile}px) {
       font-size: ${FONT_SCALE.body.bigger};
