@@ -29,7 +29,7 @@ function Header({ toggleTheme }) {
 const ThemeButton = styled.button`
   width: 40px;
   height: 18px;
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, .10);
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, .15);
 
   span {
     transition: .3s;
