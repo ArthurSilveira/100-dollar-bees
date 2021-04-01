@@ -1,8 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
+import axios from 'axios'
+
 import { BREAKPOINTS } from '../Styles/constants'
+import Collection from '../Components/Collection'
 
 function Home(props) {
+
+  const [collection, setCollection] = useState()
+
+  useEffect(() => {
+    axios.get('https://api.opensea.io/api/v1/assets', {
+      params: {
+        // owner: '0x9f9662d40f4dc862f0a1d43bf6b1e4ac200ae1af',
+        offset: '0',
+        limit: '20',
+        collection: '100-bees-hexel-collection'
+      }
+    }).then(response => {
+      setCollection(response.data.assets)
+    }).catch(error => {
+      console.log(error)
+    }).then(() => {})
+  },[])
+
+
   return (
     <HomeWrapper>
       <HomeSection>
@@ -17,9 +39,7 @@ function Home(props) {
         </StyledP>
       </HomeSection>
       <HomeSection>
-        <h2>
-          Hexel Collection
-        </h2>
+        <Collection collection={collection} />
       </HomeSection>
     </HomeWrapper>
   )
@@ -35,7 +55,6 @@ const HomeSection = styled.div`
 
   @media (min-width: ${BREAKPOINTS.mobile}px) {
     padding-top: 40px;
-    width: 75%;
   }
 `
 

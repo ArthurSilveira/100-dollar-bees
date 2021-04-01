@@ -3,6 +3,7 @@ import { Global, css } from '@emotion/react'
 
 import reset from './reset'
 import typography from './typography'
+import layout from './layout'
 import { BREAKPOINTS } from './constants'
 
 function GlobalStyles() {
@@ -12,6 +13,7 @@ function GlobalStyles() {
       styles={css`
         ${reset}
         ${typography}
+        ${layout}
         ${container}
       `}
     />

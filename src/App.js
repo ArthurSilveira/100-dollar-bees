@@ -4,11 +4,12 @@ import { ThemeProvider } from '@emotion/react'
 
 import GlobalStyles from './Styles/GlobalStyles'
 import Header from './Components/Header'
+import Footer from './Components/Footer'
 import Main from './Main'
 
 const theme = {
   colors: {
-    primary: '#f8cf00'
+    accent: '#f8cf00'
     // primary: '#ffe402'
   }
 }
@@ -20,6 +21,7 @@ function App() {
       <GlobalStyles />
       <Header />
       <Main />
+      <Footer />
     </ThemeProvider>
   );
 }

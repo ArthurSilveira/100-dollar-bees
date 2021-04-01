@@ -8,8 +8,7 @@ function Navigation(props) {
   return (
     <StyledNav>
       <NavLink to='/about' activeClassName='selected'>About</NavLink>
-      <NavLink to='/contact' activeClassName='selected'>Contact</NavLink>
-      <a href='https://opensea.io/collection/100-bees-hexel-collection' target='blank'>Opensea</a>
+      <button>Login</button>
     </StyledNav>
   )
 }
@@ -18,6 +17,7 @@ const StyledNav = styled.nav`
   flex-grow: 2;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding-top: 4px;
 
   a {
@@ -32,7 +32,7 @@ const StyledNav = styled.nav`
     }
 
     &.selected {
-      color: ${p => p.theme.colors.primary};
+      color: ${p => p.theme.colors.accent};
     }
 
     @media (min-width: ${BREAKPOINTS.mobile}px) {
@@ -40,6 +40,26 @@ const StyledNav = styled.nav`
       font-size: var(--font-size--bigger);
       font-weight: 800;
     }
+  }
+
+  button {
+    background: black;
+    margin-left: 24px;
+    padding: var(--space-inset-squish--xs);
+    font-size: var(--font-size--base);
+    font-weight: 600;
+    color: ${p => p.theme.colors.accent};
+
+    &:hover {
+      opacity: .6;
+    }
+
+    @media (min-width: ${BREAKPOINTS.mobile}px) {
+      margin-left: 64px;
+      font-size: var(--font-size--big);
+      padding: var(--space-inset-squish--s);
+      font-weight: 700;
+    }    
   }
 `
 
