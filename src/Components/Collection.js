@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
+import { FlowerBee } from '../Components/BeeAnimations'
 import { BREAKPOINTS } from '../Styles/constants'
 import { CardLoader } from './Loader'
 
@@ -15,13 +16,14 @@ function Collection({ collection = [], loading }) {
           <span>{collection.length}/100 bees minted</span>
         </Title>
         <a href='https://opensea.io/collection/100-bees-hexel-collection'>View on OpenSea</a>
+        {/* <FlowerBee timing={5} position="absolute" top="50px" right="-30px" /> */}
       </Header>
       <Body>
         {loading ? (
           <CardLoader repeat={20} />
         ) : (
-          collection.map((asset, i) => (
-            <a key={i} href={asset.permalink} target='_blank' rel='noreferrer'>
+          collection.map(asset => (
+            <a href={`/asset/${asset.token_id}`}>
               <AssetCard>
                 <img src={asset.image_url} alt='asset thumbnail' />
                 <div className='card-copy'>
@@ -53,6 +55,7 @@ const CollectionGrid = styled.div`
 `
 
 const Header = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
