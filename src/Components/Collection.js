@@ -3,10 +3,10 @@ import styled from '@emotion/styled'
 
 import { BREAKPOINTS } from '../Styles/constants'
 
+const ETH_DIVIDER = 1e18 // Not sure why but the ETH sale price comes with a huge multiplier.
+
 function Collection({ collection = [] }) {
-
-  console.log(collection)
-
+  // console.log(collection)
   return (
     <CollectionGrid>
       <Header>
@@ -23,10 +23,12 @@ function Collection({ collection = [] }) {
               <div className='card-copy'>
                 {asset.last_sale ?
                   <span className='price'>
-                    Ξ {Number.parseFloat(asset.last_sale.payment_token.eth_price).toFixed(1)} (sold)
+                    Ξ {asset.last_sale.total_price/ETH_DIVIDER} (sold)
                   </span>
                 :
-                  <span className='price'>For Sale</span>
+                  <span className='price'>
+                    Ξ {asset.sell_orders[0].current_price/ETH_DIVIDER} (for sale)
+                  </span>
                 }
                 <span>{asset.name}</span>
               </div>

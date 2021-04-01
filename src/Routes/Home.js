@@ -12,7 +12,6 @@ function Home(props) {
   useEffect(() => {
     axios.get('https://api.opensea.io/api/v1/assets', {
       params: {
-        // owner: '0x9f9662d40f4dc862f0a1d43bf6b1e4ac200ae1af',
         offset: '0',
         limit: '20',
         collection: '100-bees-hexel-collection'
