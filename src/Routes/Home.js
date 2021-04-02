@@ -29,7 +29,7 @@ function Home(props) {
     <HomeWrapper>
       <HomeSection>
         <h1>
-          Save the Bees!
+          Just Bee Cause
         </h1>
         <StyledP>
           There's over 20,000 bee species in the world, get to know some of them!

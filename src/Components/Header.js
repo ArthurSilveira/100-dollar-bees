@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { Link } from 'react-router-dom'
 
 import { BREAKPOINTS } from '../Styles/constants'
-import Navigation from './Navigation'
+// import Navigation from './Navigation'
 import logo from '../Assets/bee-logo-dark.svg'
 import { useTheme } from '@emotion/react'
 
@@ -19,7 +19,7 @@ function Header({ toggleTheme }) {
       <ThemeButton onClick={toggleTheme} className={theme.dark ? 'dark' : ''}>
         <span/>
       </ThemeButton>
-      <Navigation/>
+      {/* <Navigation/> */}
     </PageHeader>
   )
 }
@@ -78,9 +78,9 @@ const HeaderBrand = styled(Link)`
     font-size: var(--font-size--huge);
     font-weight: 800;
 
-    @media (max-width: ${BREAKPOINTS.mobile}px) {
-      display: none;
-    }
+    // @media (max-width: ${BREAKPOINTS.mobile}px) {
+    //   display: none;
+    // }
   }
 `
 
