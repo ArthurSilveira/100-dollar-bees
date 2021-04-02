@@ -8,9 +8,6 @@ const ETH_DIVIDER = 1e18 // Not sure why but the ETH sale price comes with a hug
 
 function Collection({ collection = [], loading }) {
 
-  // collection.forEach(asset => console.log(asset.sell_orders))
-  console.log(collection)
-
   return (
     <CollectionGrid>
       <Header>
