@@ -7,7 +7,10 @@ import { CardLoader } from './Loader'
 const ETH_DIVIDER = 1e18 // Not sure why but the ETH sale price comes with a huge multiplier.
 
 function Collection({ collection = [], loading }) {
-  
+
+  // collection.forEach(asset => console.log(asset.sell_orders))
+  console.log(collection)
+
   return (
     <CollectionGrid>
       <Header>
@@ -31,7 +34,7 @@ function Collection({ collection = [], loading }) {
                     </span>
                   :
                     <span className='price'>
-                      Ξ {asset.sell_orders[0].current_price/ETH_DIVIDER} (for sale)
+                      {asset.sell_orders[0] ? `Ξ ${asset.sell_orders[0].current_price/ETH_DIVIDER} (for sale)` : 'Private (Collab)'}
                     </span>
                   }
                   <span>{asset.name}</span>

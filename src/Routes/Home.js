@@ -14,7 +14,7 @@ function Home(props) {
     axios.get('https://api.opensea.io/api/v1/assets', {
       params: {
         offset: '0',
-        limit: '20',
+        limit: '50',
         collection: '100-bees-hexel-collection'
       }
     }).then(response => {
