@@ -23,7 +23,7 @@ function Footer(props) {
     <PageFooter>
       <FooterLinks className='container'>
         <a href="https://opensea.io/" title="Buy on OpenSea" target="_blank" rel='noreferrer'><img style={{width: '160px', borderRadius: '5px', boxShadow: '0px 1px 6px rgba(0, 0, 0, 0.25)'}} src="https://storage.googleapis.com/opensea-static/opensea-brand/buy-button-white.png" alt="Buy on OpenSea badge" /></a>
-        <span>The Bee Collective™</span>
+        <span>$100Bees</span>
         <SocialMediaButtons
           links={links}
           buttonStyle={style}

@@ -32,8 +32,8 @@ function Home(props) {
           Just Bee Cause
         </h1>
         <StyledP>
-          There's over 20,000 bee species in the world, get to know some of them!
-          The crypto bee collective engages in bee conservation cryptophilanthropy.
+          There's over 20,000 bee species in the world, get to know some of them!<br/>
+          $100Bees engages in bee conservation cryptophilanthropy.
           At least 50% of the proceeds will be donated to bee conservation.
           The remainder will go to support the artist and the bee collective. Bzzzz
         </StyledP>
@@ -65,7 +65,7 @@ const StyledP = styled.p`
   
   @media (min-width: ${BREAKPOINTS.mobile}px) {
     padding-top: 20px;
-    padding-right: 25%;
+    padding-right: 20%;
   }
 `
 
