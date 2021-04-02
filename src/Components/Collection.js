@@ -24,7 +24,7 @@ function Collection({ collection = [], loading }) {
           <CardLoader repeat={20}/>
         ) : ( 
           collection.map((asset) => (
-            <a href={asset.permalink} target='blank'>
+            <a href={asset.permalink} target='_blank' rel='noreferrer'>
               <AssetCard>
                 <img src={asset.image_url} alt='asset thumbnail'/>
                 <div className='card-copy'>
