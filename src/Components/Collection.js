@@ -17,7 +17,7 @@ function Collection({ collection = [], loading }) {
         <a href='https://opensea.io/collection/100-bees-hexel-collection'>View on OpenSea</a>
       </Header>
       <Body>
-        {true ? ( 
+        {loading ? ( 
           <CardLoader repeat={20}/>
         ) : ( 
           collection.map((asset) => (
