@@ -13,6 +13,7 @@ const lightTheme = {
     background: '#FFF',
     foreground: '#FAFAFC',
     primary: '#000',
+    subtle: '#6b707a',
     contrast: '#FFF',
     accent: '#f8cf00',
   }

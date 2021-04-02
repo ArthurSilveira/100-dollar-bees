@@ -11,9 +11,12 @@ function Collection({ collection = [], loading }) {
   return (
     <CollectionGrid>
       <Header>
-        <h2>
-          Hexel Collection
-        </h2>
+        <Title>
+          <h2>
+            Hexel Collection
+          </h2>
+          <span>{collection.length}/100 bees minted</span>
+        </Title>
         <a href='https://opensea.io/collection/100-bees-hexel-collection'>View on OpenSea</a>
       </Header>
       <Body>
@@ -54,12 +57,20 @@ const CollectionGrid = styled.div`
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 8px;
 
   a {
     font-weight: 700;
     color: ${p => p.theme.colors.accent}
+  }
+`
+const Title = styled.div`
+  span {
+    display: block;
+    padding-top: var(--space--xxs);
+    font-weight: 600;
+    color: ${p => p.theme.colors.subtle};
   }
 `
 
