@@ -13,8 +13,6 @@ function GlobalStyles() {
     <Global
       styles={css`
         
-        
-
         body {
           transition: background-color .2s ease;
           background: ${theme.colors.background};
@@ -24,7 +22,7 @@ function GlobalStyles() {
         a {
           color: ${theme.colors.primary};
         }
-
+        
         ${reset}
         ${typography}
         ${layout}

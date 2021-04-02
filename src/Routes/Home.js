@@ -60,7 +60,6 @@ const HomeSection = styled.div`
 `
 
 const StyledP = styled.p`
-  line-height: 1.8;
   padding-top: 20px;
   padding-right: 0;
   

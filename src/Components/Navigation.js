@@ -43,11 +43,12 @@ const StyledNav = styled.nav`
   }
 
   button {
-    background: ${p => p.theme.colors.primary};
+    background: ${p => p.theme.dark ? p.theme.colors.accent : p.theme.colors.primary};
     margin-left: 24px;
     padding: var(--space-inset-squish--xs);
     font-size: var(--font-size--base);
     font-weight: 600;
+    min-width: 56.7px;
     color: ${p => p.theme.dark ? p.theme.colors.contrast : p.theme.colors.accent};
 
     &:hover {
@@ -59,6 +60,7 @@ const StyledNav = styled.nav`
       font-size: var(--font-size--big);
       padding: var(--space-inset-squish--s);
       font-weight: 700;
+      min-width: 71.15px;
     }    
   }
 `
