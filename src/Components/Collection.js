@@ -2,11 +2,12 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 import { BREAKPOINTS } from '../Styles/constants'
+import { CardLoader } from './Loader'
 
 const ETH_DIVIDER = 1e18 // Not sure why but the ETH sale price comes with a huge multiplier.
 
-function Collection({ collection = [] }) {
-  // console.log(collection)
+function Collection({ collection = [], loading }) {
+  
   return (
     <CollectionGrid>
       <Header>
@@ -16,25 +17,30 @@ function Collection({ collection = [] }) {
         <a href='https://opensea.io/collection/100-bees-hexel-collection'>View on OpenSea</a>
       </Header>
       <Body>
-        {collection.map((asset) => (
-          <a href={asset.permalink} target='blank'>
-            <AssetCard>
-              <img src={asset.image_url} alt='asset thumbnail'/>
-              <div className='card-copy'>
-                {asset.last_sale ?
-                  <span className='price'>
-                    Ξ {asset.last_sale.total_price/ETH_DIVIDER} (sold)
-                  </span>
-                :
-                  <span className='price'>
-                    Ξ {asset.sell_orders[0].current_price/ETH_DIVIDER} (for sale)
-                  </span>
-                }
-                <span>{asset.name}</span>
-              </div>
-            </AssetCard>
-          </a>
-        ))}
+        {loading ? ( 
+          <CardLoader repeat={20}/>
+        ) : ( 
+          collection.map((asset) => (
+            <a href={asset.permalink} target='blank'>
+              <AssetCard>
+                <img src={asset.image_url} alt='asset thumbnail'/>
+                <div className='card-copy'>
+                  {asset.last_sale ?
+                    <span className='price'>
+                      Ξ {asset.last_sale.total_price/ETH_DIVIDER} (sold)
+                    </span>
+                  :
+                    <span className='price'>
+                      Ξ {asset.sell_orders[0].current_price/ETH_DIVIDER} (for sale)
+                    </span>
+                  }
+                  <span>{asset.name}</span>
+                </div>
+              </AssetCard>
+            </a>
+          )))
+        }
+        
       </Body>
     </CollectionGrid>
   )
@@ -80,7 +86,7 @@ const AssetCard = styled.div`
   padding: 8px 0;
   height: 100%;
   flex-direction: column;
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, .05);
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, .10);
   background: ${p => p.theme.dark && p.theme.colors.foreground};
 
   .card-copy {

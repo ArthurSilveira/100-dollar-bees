@@ -8,6 +8,7 @@ import Collection from '../Components/Collection'
 function Home(props) {
 
   const [collection, setCollection] = useState()
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     axios.get('https://api.opensea.io/api/v1/assets', {
@@ -20,7 +21,7 @@ function Home(props) {
       setCollection(response.data.assets)
     }).catch(error => {
       console.log(error)
-    }).then(() => {})
+    }).then(() => setLoading(false))
   },[])
 
 
@@ -38,7 +39,7 @@ function Home(props) {
         </StyledP>
       </HomeSection>
       <HomeSection>
-        <Collection collection={collection} />
+        <Collection collection={collection} loading={loading}/>
       </HomeSection>
     </HomeWrapper>
   )
@@ -61,9 +62,11 @@ const HomeSection = styled.div`
 const StyledP = styled.p`
   line-height: 1.8;
   padding-top: 20px;
+  padding-right: 0;
   
   @media (min-width: ${BREAKPOINTS.mobile}px) {
     padding-top: 20px;
+    padding-right: 25%;
   }
 `
 
