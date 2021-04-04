@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
 import Helmet from 'react-helmet'
 
 export const homeMetaData = {
@@ -10,7 +9,6 @@ export const homeMetaData = {
 export function HomeMeta() {
     return (
         <Helmet>
-
             {/* <!-- HTML Meta Tags --> */}
             <title>{homeMetaData.name} - Hundred Dollar Bees</title>
             <meta
@@ -53,7 +51,6 @@ export function HomeMeta() {
                 name="twitter:image"
                 content={homeMetaData.banner}
             />
-
         </Helmet>
     )
 }
