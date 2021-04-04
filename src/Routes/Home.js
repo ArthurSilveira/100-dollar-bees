@@ -4,6 +4,7 @@ import axios from 'axios'
 
 import { BREAKPOINTS } from '../Styles/constants'
 import Collection from '../Components/Collection'
+import { HomeMeta } from '../Components/PageMeta'
 
 function Home(props) {
 
@@ -26,7 +27,8 @@ function Home(props) {
 
 
   return (
-    <HomeWrapper>
+      <HomeWrapper>
+          <HomeMeta />
       <HomeSection>
         <h1>
           Just Bee Cause
@@ -62,7 +64,7 @@ const HomeSection = styled.div`
 const StyledP = styled.p`
   padding-top: 20px;
   padding-right: 0;
-  
+
   @media (min-width: ${BREAKPOINTS.mobile}px) {
     padding-top: 20px;
     padding-right: 20%;
