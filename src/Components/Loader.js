@@ -2,14 +2,15 @@ import { useTheme } from '@emotion/react'
 import React from 'react'
 import ContentLoader from 'react-content-loader'
 
-export const CardLoader = (props) => {
+export const CardLoader = props => {
   const theme = useTheme()
 
   const bgColor = theme.dark ? theme.colors.foreground : undefined
   const fgColor = theme.dark ? '#3d414a' : undefined
 
-  const loader = (
+  const loader = key => (
     <ContentLoader
+      key={key}
       backgroundColor={bgColor}
       foregroundColor={fgColor}
       style={{
@@ -30,10 +31,10 @@ export const CardLoader = (props) => {
 
   if (props.repeat) {
     for (let i = 0; i < props.repeat; i++) {
-      loaderArray.push(loader)
+      loaderArray.push(loader(i))
     }
 
-    return loaderArray.map((loader) => loader)
+    return loaderArray.map(loader => loader)
   } else {
     return loader
   }

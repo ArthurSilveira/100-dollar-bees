@@ -20,8 +20,8 @@ function Collection({ collection = [], loading }) {
         {loading ? (
           <CardLoader repeat={20} />
         ) : (
-          collection.map((asset) => (
-            <a href={asset.permalink} target='_blank' rel='noreferrer'>
+          collection.map((asset, i) => (
+            <a key={i} href={asset.permalink} target='_blank' rel='noreferrer'>
               <AssetCard>
                 <img src={asset.image_url} alt='asset thumbnail' />
                 <div className='card-copy'>
@@ -60,7 +60,7 @@ const Header = styled.div`
 
   a {
     font-weight: 700;
-    color: ${(p) => p.theme.colors.accent};
+    color: ${p => p.theme.colors.accent};
   }
 `
 const Title = styled.div`
@@ -68,7 +68,7 @@ const Title = styled.div`
     display: block;
     padding-top: var(--space--xxs);
     font-weight: 600;
-    color: ${(p) => p.theme.colors.subtle};
+    color: ${p => p.theme.colors.subtle};
   }
 `
 
@@ -96,7 +96,7 @@ const AssetCard = styled.div`
   height: 100%;
   flex-direction: column;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
-  background: ${(p) => p.theme.dark && p.theme.colors.foreground};
+  background: ${p => p.theme.dark && p.theme.colors.foreground};
 
   .card-copy {
     padding: var(--space-inset--xs);

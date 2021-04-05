@@ -35,12 +35,12 @@ const ThemeButton = styled.button`
     display: block;
     height: 20px;
     width: 20px;
-    background: ${(p) => p.theme.colors.accent};
+    background: ${p => p.theme.colors.accent};
     transform: translate(0, -1px);
   }
 
   &.dark {
-    background: ${(p) => p.theme.colors.foreground};
+    background: ${p => p.theme.colors.foreground};
     span {
       transform: translate(20px, -1px);
     }

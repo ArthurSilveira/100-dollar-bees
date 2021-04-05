@@ -18,10 +18,10 @@ function Home(props) {
           collection: '100-bees-hexel-collection'
         }
       })
-      .then((response) => {
+      .then(response => {
         setCollection(response.data.assets)
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error)
       })
       .then(() => setLoading(false))

@@ -26,7 +26,7 @@ const StyledNav = styled.nav`
     margin-left: 16px;
     font-size: var(--font-size--base);
     font-weight: 700;
-    color: ${(p) => p.theme.colors.primary};
+    color: ${p => p.theme.colors.primary};
     text-decoration: none;
 
     &:hover {
@@ -34,7 +34,7 @@ const StyledNav = styled.nav`
     }
 
     &.selected {
-      color: ${(p) => p.theme.colors.accent};
+      color: ${p => p.theme.colors.accent};
     }
 
     @media (min-width: ${BREAKPOINTS.mobile}px) {
@@ -45,13 +45,13 @@ const StyledNav = styled.nav`
   }
 
   button {
-    background: ${(p) => (p.theme.dark ? p.theme.colors.accent : p.theme.colors.primary)};
+    background: ${p => (p.theme.dark ? p.theme.colors.accent : p.theme.colors.primary)};
     margin-left: 24px;
     padding: var(--space-inset-squish--xs);
     font-size: var(--font-size--base);
     font-weight: 600;
     min-width: 56.7px;
-    color: ${(p) => (p.theme.dark ? p.theme.colors.contrast : p.theme.colors.accent)};
+    color: ${p => (p.theme.dark ? p.theme.colors.contrast : p.theme.colors.accent)};
 
     &:hover {
       opacity: 0.6;
