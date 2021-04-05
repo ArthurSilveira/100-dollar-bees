@@ -22,8 +22,8 @@ function Collection({ collection = [], loading }) {
         {loading ? (
           <CardLoader repeat={20} />
         ) : (
-          collection.map(asset => (
-            <a href={`/asset/${asset.token_id}`}>
+          collection.map((asset, i) => (
+              <a key={i} href={`/asset/${asset.token_id}`}>
               <AssetCard>
                 <img src={asset.image_url} alt='asset thumbnail' />
                 <div className='card-copy'>
