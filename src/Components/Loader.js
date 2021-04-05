@@ -2,13 +2,13 @@ import { useTheme } from '@emotion/react'
 import React from 'react'
 import ContentLoader from 'react-content-loader'
 
-export const CardLoader = props => {
+export const CardLoader = (props) => {
   const theme = useTheme()
 
   const bgColor = theme.dark ? theme.colors.foreground : undefined
   const fgColor = theme.dark ? '#3d414a' : undefined
 
-  const loader =
+  const loader = (
     <ContentLoader
       backgroundColor={bgColor}
       foregroundColor={fgColor}
@@ -19,11 +19,12 @@ export const CardLoader = props => {
         display: 'flex'
       }}
       {...props}
-      >
-      <rect x="0" y="8" rx="0" ry="0" width="100%" height="136" />
-      <rect x="0" y="160" rx="0" ry="0" width="50%" height="18" />
-      <rect x="0" y="190" rx="0" ry="0" width="80%" height="14" />
+    >
+      <rect x='0' y='8' rx='0' ry='0' width='100%' height='136' />
+      <rect x='0' y='160' rx='0' ry='0' width='50%' height='18' />
+      <rect x='0' y='190' rx='0' ry='0' width='80%' height='14' />
     </ContentLoader>
+  )
 
   const loaderArray = []
 
@@ -32,9 +33,8 @@ export const CardLoader = props => {
       loaderArray.push(loader)
     }
 
-    return loaderArray.map(loader => loader)
+    return loaderArray.map((loader) => loader)
   } else {
     return loader
   }
-  
 }

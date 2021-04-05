@@ -7,7 +7,9 @@ import { BREAKPOINTS } from '../Styles/constants'
 function Navigation(props) {
   return (
     <StyledNav>
-      <NavLink to='/about' activeClassName='selected'>About</NavLink>
+      <NavLink to='/about' activeClassName='selected'>
+        About
+      </NavLink>
       <button>Login</button>
     </StyledNav>
   )
@@ -24,15 +26,15 @@ const StyledNav = styled.nav`
     margin-left: 16px;
     font-size: var(--font-size--base);
     font-weight: 700;
-    color: ${p => p.theme.colors.primary};
+    color: ${(p) => p.theme.colors.primary};
     text-decoration: none;
 
     &:hover {
-      opacity: .6;
+      opacity: 0.6;
     }
 
     &.selected {
-      color: ${p => p.theme.colors.accent};
+      color: ${(p) => p.theme.colors.accent};
     }
 
     @media (min-width: ${BREAKPOINTS.mobile}px) {
@@ -43,16 +45,16 @@ const StyledNav = styled.nav`
   }
 
   button {
-    background: ${p => p.theme.dark ? p.theme.colors.accent : p.theme.colors.primary};
+    background: ${(p) => (p.theme.dark ? p.theme.colors.accent : p.theme.colors.primary)};
     margin-left: 24px;
     padding: var(--space-inset-squish--xs);
     font-size: var(--font-size--base);
     font-weight: 600;
     min-width: 56.7px;
-    color: ${p => p.theme.dark ? p.theme.colors.contrast : p.theme.colors.accent};
+    color: ${(p) => (p.theme.dark ? p.theme.colors.contrast : p.theme.colors.accent)};
 
     &:hover {
-      opacity: .6;
+      opacity: 0.6;
     }
 
     @media (min-width: ${BREAKPOINTS.mobile}px) {
@@ -61,7 +63,7 @@ const StyledNav = styled.nav`
       padding: var(--space-inset-squish--s);
       font-weight: 700;
       min-width: 71.15px;
-    }    
+    }
   }
 `
 

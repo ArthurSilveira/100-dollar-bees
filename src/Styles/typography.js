@@ -37,14 +37,13 @@ const typography = css`
   }
 
   code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   }
 
   h1 {
     font-size: ${FONT_SCALE.headings.h2};
     font-weight: 800;
-    
+
     @media (min-width: ${BREAKPOINTS.mobile}px) {
       font-size: ${FONT_SCALE.headings.h1};
     }
@@ -53,7 +52,7 @@ const typography = css`
   h2 {
     font-size: ${FONT_SCALE.headings.h3};
     font-weight: 600;
-    
+
     @media (min-width: ${BREAKPOINTS.mobile}px) {
       font-size: ${FONT_SCALE.headings.h2};
     }

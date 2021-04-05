@@ -12,9 +12,8 @@ function GlobalStyles() {
   return (
     <Global
       styles={css`
-        
         body {
-          transition: background-color .2s ease;
+          transition: background-color 0.2s ease;
           background: ${theme.colors.background};
           color: ${theme.colors.primary};
         }
@@ -22,7 +21,7 @@ function GlobalStyles() {
         a {
           color: ${theme.colors.primary};
         }
-        
+
         ${reset}
         ${typography}
         ${layout}
@@ -42,7 +41,6 @@ const container = css`
     @media (min-width: ${BREAKPOINTS.mobile}px) {
       width: 100%;
     }
-
   }
 `
 

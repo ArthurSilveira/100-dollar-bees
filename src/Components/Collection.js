@@ -7,43 +7,41 @@ import { CardLoader } from './Loader'
 const ETH_DIVIDER = 1e18 // Not sure why but the ETH sale price comes with a huge multiplier.
 
 function Collection({ collection = [], loading }) {
-
   return (
     <CollectionGrid>
       <Header>
         <Title>
-          <h2>
-            Hexel Collection
-          </h2>
+          <h2>Hexel Collection</h2>
           <span>{collection.length}/100 bees minted</span>
         </Title>
         <a href='https://opensea.io/collection/100-bees-hexel-collection'>View on OpenSea</a>
       </Header>
       <Body>
-        {loading ? ( 
-          <CardLoader repeat={20}/>
-        ) : ( 
+        {loading ? (
+          <CardLoader repeat={20} />
+        ) : (
           collection.map((asset) => (
             <a href={asset.permalink} target='_blank' rel='noreferrer'>
               <AssetCard>
-                <img src={asset.image_url} alt='asset thumbnail'/>
+                <img src={asset.image_url} alt='asset thumbnail' />
                 <div className='card-copy'>
-                  {asset.last_sale ?
+                  {asset.last_sale ? (
                     <span className='price'>
-                      Ξ {asset.last_sale.total_price/ETH_DIVIDER} (sold)
+                      Ξ {asset.last_sale.total_price / ETH_DIVIDER} (sold)
                     </span>
-                  :
+                  ) : (
                     <span className='price'>
-                      {asset.sell_orders[0] ? `Ξ ${asset.sell_orders[0].current_price/ETH_DIVIDER} (for sale)` : 'Private (Collab)'}
+                      {asset.sell_orders[0]
+                        ? `Ξ ${asset.sell_orders[0].current_price / ETH_DIVIDER} (for sale)`
+                        : 'Private (Collab)'}
                     </span>
-                  }
+                  )}
                   <span>{asset.name}</span>
                 </div>
               </AssetCard>
             </a>
-          )))
-        }
-        
+          ))
+        )}
       </Body>
     </CollectionGrid>
   )
@@ -62,7 +60,7 @@ const Header = styled.div`
 
   a {
     font-weight: 700;
-    color: ${p => p.theme.colors.accent}
+    color: ${(p) => p.theme.colors.accent};
   }
 `
 const Title = styled.div`
@@ -70,7 +68,7 @@ const Title = styled.div`
     display: block;
     padding-top: var(--space--xxs);
     font-weight: 600;
-    color: ${p => p.theme.colors.subtle};
+    color: ${(p) => p.theme.colors.subtle};
   }
 `
 
@@ -97,14 +95,14 @@ const AssetCard = styled.div`
   padding: 8px 0;
   height: 100%;
   flex-direction: column;
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, .10);
-  background: ${p => p.theme.dark && p.theme.colors.foreground};
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+  background: ${(p) => p.theme.dark && p.theme.colors.foreground};
 
   .card-copy {
     padding: var(--space-inset--xs);
     display: flex;
     flex-direction: column;
-    
+
     .price {
       font-weight: 600;
       padding: 4px 0;

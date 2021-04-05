@@ -6,40 +6,41 @@ import { BREAKPOINTS } from '../Styles/constants'
 import Collection from '../Components/Collection'
 
 function Home(props) {
-
   const [collection, setCollection] = useState()
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    axios.get('https://api.opensea.io/api/v1/assets', {
-      params: {
-        offset: '0',
-        limit: '50',
-        collection: '100-bees-hexel-collection'
-      }
-    }).then(response => {
-      setCollection(response.data.assets)
-    }).catch(error => {
-      console.log(error)
-    }).then(() => setLoading(false))
-  },[])
-
+    axios
+      .get('https://api.opensea.io/api/v1/assets', {
+        params: {
+          offset: '0',
+          limit: '50',
+          collection: '100-bees-hexel-collection'
+        }
+      })
+      .then((response) => {
+        setCollection(response.data.assets)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+      .then(() => setLoading(false))
+  }, [])
 
   return (
     <HomeWrapper>
       <HomeSection>
-        <h1>
-          Just Bee Cause
-        </h1>
+        <h1>Just Bee Cause</h1>
         <StyledP>
-          There's over 20,000 bee species in the world, get to know some of them!<br/>
-          $100Bees engages in bee conservation cryptophilanthropy.
-          At least 50% of the proceeds will be donated to bee conservation.
-          The remainder will go to support the artist and the bee collective. Bzzzz
+          There's over 20,000 bee species in the world, get to know some of them!
+          <br />
+          $100Bees engages in bee conservation cryptophilanthropy. At least 50% of the proceeds will
+          be donated to bee conservation. The remainder will go to support the artist and the bee
+          collective. Bzzzz
         </StyledP>
       </HomeSection>
       <HomeSection>
-        <Collection collection={collection} loading={loading}/>
+        <Collection collection={collection} loading={loading} />
       </HomeSection>
     </HomeWrapper>
   )
@@ -62,7 +63,7 @@ const HomeSection = styled.div`
 const StyledP = styled.p`
   padding-top: 20px;
   padding-right: 0;
-  
+
   @media (min-width: ${BREAKPOINTS.mobile}px) {
     padding-top: 20px;
     padding-right: 20%;

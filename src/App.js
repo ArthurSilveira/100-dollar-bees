@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import { ThemeProvider } from '@emotion/react'
 
@@ -15,7 +14,7 @@ const lightTheme = {
     primary: '#000',
     subtle: '#6b707a',
     contrast: '#FFF',
-    accent: '#f8cf00',
+    accent: '#f8cf00'
   }
 }
 
@@ -26,8 +25,8 @@ const darkTheme = {
     foreground: '#26292F',
     primary: '#FFF',
     contrast: '#000',
-    accent: '#f8cf00',
-  } 
+    accent: '#f8cf00'
+  }
 }
 
 function App() {
@@ -40,11 +39,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Header toggleTheme={toggleTheme}/>
+      <Header toggleTheme={toggleTheme} />
       <Main />
       <Footer />
     </ThemeProvider>
-  );
+  )
 }
 
-export default App;
+export default App

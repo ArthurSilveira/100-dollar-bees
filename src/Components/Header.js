@@ -17,7 +17,7 @@ function Header({ toggleTheme }) {
         <span className='hide-sm'>$100Bees</span>
       </HeaderBrand>
       <ThemeButton onClick={toggleTheme} className={theme.dark ? 'dark' : ''}>
-        <span/>
+        <span />
       </ThemeButton>
       {/* <Navigation/> */}
     </PageHeader>
@@ -27,20 +27,20 @@ function Header({ toggleTheme }) {
 const ThemeButton = styled.button`
   width: 40px;
   height: 18px;
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, .15);
-  transition: .1s;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.15);
+  transition: 0.1s;
 
   span {
-    transition: .2s;
+    transition: 0.2s;
     display: block;
     height: 20px;
     width: 20px;
-    background: ${p => p.theme.colors.accent};
+    background: ${(p) => p.theme.colors.accent};
     transform: translate(0, -1px);
   }
 
   &.dark {
-    background: ${p => p.theme.colors.foreground};    
+    background: ${(p) => p.theme.colors.foreground};
     span {
       transform: translate(20px, -1px);
     }
@@ -64,7 +64,7 @@ const HeaderBrand = styled(Link)`
   display: flex;
   align-items: center;
   flex-grow: 1;
-  
+
   img {
     height: 24px;
     @media (min-width: ${BREAKPOINTS.mobile}px) {

@@ -12,7 +12,7 @@ function Footer(props) {
   const style = {
     width: '64px',
     height: '64px',
-    margin: '0px 16px',
+    margin: '0px 16px'
   }
 
   const iconStyle = {
@@ -22,7 +22,17 @@ function Footer(props) {
   return (
     <PageFooter>
       <FooterLinks className='container'>
-        <a href="https://opensea.io/" title="Buy on OpenSea" target="_blank" rel='noreferrer'><img style={{width: '160px', borderRadius: '5px', boxShadow: '0px 1px 6px rgba(0, 0, 0, 0.25)'}} src="https://storage.googleapis.com/opensea-static/opensea-brand/buy-button-white.png" alt="Buy on OpenSea badge" /></a>
+        <a href='https://opensea.io/' title='Buy on OpenSea' target='_blank' rel='noreferrer'>
+          <img
+            style={{
+              width: '160px',
+              borderRadius: '5px',
+              boxShadow: '0px 1px 6px rgba(0, 0, 0, 0.25)'
+            }}
+            src='https://storage.googleapis.com/opensea-static/opensea-brand/buy-button-white.png'
+            alt='Buy on OpenSea badge'
+          />
+        </a>
         <span>$100Bees</span>
         <SocialMediaButtons
           links={links}
@@ -37,7 +47,7 @@ function Footer(props) {
 
 const PageFooter = styled.div`
   padding: var(--space-inset--xxl) 0;
-  background: ${p => p.theme.colors.foreground};
+  background: ${(p) => p.theme.colors.foreground};
 `
 const FooterLinks = styled.div`
   display: flex;

@@ -5,7 +5,6 @@ import Contact from './Routes/Contact'
 import About from './Routes/About'
 
 function Main(props) {
-
   return (
     <main className='container'>
       <Switch>
