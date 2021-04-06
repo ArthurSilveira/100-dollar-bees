@@ -60,12 +60,12 @@ const typography = css`
 
   h3 {
     font-size: ${FONT_SCALE.headings.h3};
-    font-weight: 700;
+    font-weight: 500;
   }
 
   h4 {
     font-size: ${FONT_SCALE.headings.h4};
-    font-weight: 700;
+    font-weight: 500;
   }
 `
 

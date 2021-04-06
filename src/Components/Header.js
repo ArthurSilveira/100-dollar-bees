@@ -19,6 +19,7 @@ function Header({ toggleTheme }) {
       <ThemeButton onClick={toggleTheme} className={theme.dark ? 'dark' : ''}>
         <span />
       </ThemeButton>
+      {/* <FlowerBee position="absolute" bottom="53%" right="5px" zIndex="0" /> */}
       {/* <Navigation/> */}
     </PageHeader>
   )
@@ -29,6 +30,7 @@ const ThemeButton = styled.button`
   height: 18px;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.15);
   transition: 0.1s;
+  z-index: 300;
 
   span {
     transition: 0.2s;
@@ -78,9 +80,9 @@ const HeaderBrand = styled(Link)`
     font-size: var(--font-size--huge);
     font-weight: 800;
 
-    // @media (max-width: ${BREAKPOINTS.mobile}px) {
-    //   display: none;
-    // }
+    /* @media (max-width: ${BREAKPOINTS.mobile}px) {
+      display: none;
+    } */
   }
 `
 
