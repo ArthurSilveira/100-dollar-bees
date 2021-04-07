@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styled from '@emotion/styled'
+import ReactMarkdown from 'react-markdown'
 
 import { AssetLoader, BoxLoader } from '../Components/Loader'
 import { FlowerBee } from '../Components/BeeAnimations'
@@ -173,7 +174,9 @@ function AssetDetails(props) {
                 View this bee on OpenSea
               </a>
             </InfoGroup>
-            <p>{asset?.description}</p>
+
+            <ReactMarkdown linkTarget='_blank'>{asset?.description}</ReactMarkdown>
+
             {BREAKPOINTS.tablet > deviceWidth && (
               <OwnerAssets
                 owner={asset.top_ownerships[0].owner.address}
